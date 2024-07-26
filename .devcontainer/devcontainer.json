@@ -1,0 +1,38 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+    "name": "langserve-template",
+    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+    // "image": "mcr.microsoft.com/devcontainers/python:1-3.10-bookworm",
+    "image": "mcr.microsoft.com/devcontainers/python:1-3.10-bullseye",
+    "features": {
+        "ghcr.io/devcontainers-contrib/features/poetry:2": {}
+        //"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    },
+    "containerEnv": {
+        "FASTAPI_ENV": "local"
+    },
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [],
+    // Use 'postCreateCommand' to run commands after the container is created.
+    "postCreateCommand": "/workspaces/talktree_agent/.devcontainer/init.sh",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "mikoz.black-py",
+                "ms-python.isort",
+                "ms-python.flake8",
+                "matangover.mypy",
+                "ms-python.black-formatter",
+                "atlassian.atlascode",
+                "magicstack.MagicPython",
+                "ms-python.vscode-pylance",
+                "mikoz.shed"
+            ]
+        }
+    }
+    // "workspaceFolder": "/workspace",
+    // Configure tool-specific properties.
+    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+    // "remoteUser": "root"
+}

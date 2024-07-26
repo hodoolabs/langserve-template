@@ -35,23 +35,23 @@ async def redirect_root_to_docs():
 add_routes(app, chain, path="/prompt")
 
 
-class InputChat(BaseModel):
-    """Input for the chat endpoint."""
+# class InputChat(BaseModel):
+#     """Input for the chat endpoint."""
 
-    messages: List[Union[HumanMessage, AIMessage, SystemMessage]] = Field(
-        ...,
-        description="The chat messages representing the current conversation.",
-    )
+#     messages: List[Union[HumanMessage, AIMessage, SystemMessage]] = Field(
+#         ...,
+#         description="The chat messages representing the current conversation.",
+#     )
 
 
-add_routes(
-    app,
-    chat_chain.with_types(input_type=InputChat),
-    path="/chat",
-    enable_feedback_endpoint=True,
-    enable_public_trace_link_endpoint=True,
-    playground_type="chat",
-)
+# add_routes(
+#     app,
+#     chat_chain.with_types(input_type=InputChat),
+#     path="/chat",
+#     enable_feedback_endpoint=True,
+#     enable_public_trace_link_endpoint=True,
+#     playground_type="chat",
+# )
 
 if __name__ == "__main__":
     import uvicorn

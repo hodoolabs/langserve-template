@@ -1,4 +1,4 @@
-from langchain.chat_models import ChatOpenAI
+from langchain.chat_models.openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from dotenv import load_dotenv
@@ -24,6 +24,8 @@ prompt = ChatPromptTemplate.from_messages([("system", template)]).partial(
     instructions=docs
 )
 
-chain = (
-    prompt | ChatOpenAI(model="gpt-4-1106-preview", temperature=0) | StrOutputParser()
-)
+# 체인의 각 부분을 별도의 변수로 분리하여 줄 길이를 줄임
+chat_model = ChatOpenAI(model="gpt-4-1106-preview", temperature=0)
+output_parser = StrOutputParser()
+
+chain = prompt | chat_model | output_parser
