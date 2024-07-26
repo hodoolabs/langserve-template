@@ -13,10 +13,12 @@ python = "^3.10,<3.12"
 langserve = "^0.0.51"
 openai = "^1.14.2"
 uvicorn = "^0.23.2"
-pydantic = "^2.6.4"
-langchain = "^0.1.13"
+pydantic = "1.10.13"
+langchain = "^0.1.0"  # 버전 범위를 더 넓게 설정
 langchain-cli = "^0.0.21"
 python-dotenv = "^1.0.1"
+langchain-openai = "^0.0.2"  # 버전을 낮춤
+langchain-core = "^0.1.7"  # 명시적으로 추가
 
 [tool.poetry.group.dev.dependencies]
 langchain-cli = ">=0.0.15"
