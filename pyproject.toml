@@ -19,6 +19,7 @@ langchain-cli = "^0.0.21"
 python-dotenv = "^1.0.1"
 langchain-openai = "^0.0.2"  # 버전을 낮춤
 langchain-core = "^0.1.7"  # 명시적으로 추가
+python-multipart = "^0.0.9"
 
 [tool.poetry.group.dev.dependencies]
 langchain-cli = ">=0.0.15"
